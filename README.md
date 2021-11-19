@@ -27,7 +27,12 @@ $ ./configure && make && sudo make install
 $ cd easel && make check && sudo make install
 ```
 
-Also install [Python 3.7](https://www.python.org/downloads/)
+Install Python and make sure you have the following packages.
+- [Python 3.7](https://www.python.org/downloads/)
+- [Pandas](https://pandas.pydata.org/)
+- [Matplotlib](https://matplotlib.org/)
+- [Cartopy](https://scitools.org.uk/cartopy/docs/latest/installing.html)
+
 
 ## The Process
 
@@ -44,12 +49,26 @@ This will create multiple files with the prefix of your metabolism of interest:
 - __target.txt__: This contains all the cleaned data, along with the source of each hit. This file is necessary for your code later on. 
 
 ### 2. Delimit your target.txt files
-This step is manual. You have to open the target files in the saved directory with your favorite spreadsheet viewer. Set "./" as your custom delimiter and open your file. Add an additional row on top, and label row G (which is your numeric row) as "genome_id".  
+This step is manual. I may work on a script depending on how others adopt this script. For now, you have to open the target files in the saved directory with your favorite spreadsheet viewer. Set "./" as your custom delimiter and open your file. Add an additional row on top, and label row G (which is your numeric row) as "genome_id".  
 
 Save each file as the in the format of MetabolismName_target_file.xlsx, where Metabolism Name stands in for the HMM you used to search for a metabolism (e.g., idrA_target_file.xlsx
 
 ### 3. Generate Fun Graphs
-This step, you just need to run the script Metabolism Finder.py using python. Ensure that dependencies are installed.
+This step, you just need to run the script 
+```
+$ python Metabolism Finder.py
+```
+Ensure that dependencies are installed.
 Running this script will put out svg files of various datatypes.
 Examples below:
+
+_Taxonomic Distribution_
+![image](https://user-images.githubusercontent.com/27031932/142695925-c9a8ef5b-49f0-46e1-a73b-e0e9936f0f02.png)
+
+_Another way of viewing the same data_
+![image](https://user-images.githubusercontent.com/27031932/142695969-251c1016-2126-4521-b94f-da3df63f3634.png)
+
+_Distribution Map_
+![image](https://user-images.githubusercontent.com/27031932/142696004-ae30f930-65b4-41ec-8daf-dd2bdd4dd047.png)
+
 
